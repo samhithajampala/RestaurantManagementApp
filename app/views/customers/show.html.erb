@@ -1,0 +1,94 @@
+</html>
+<title>
+Customer Menu
+</title>
+<style>
+body
+{
+    background-image : url("/selectcustomer.jpg");
+    backgorund-size : cover;
+}
+.b1 , .b2, .b4
+{
+   font-size : 30px;
+   background-color : green;
+   color : white;
+   font-style : italic;
+   cursor : pointer;
+   border-radius : 10px;
+   border : 2px solid green;
+   transition-duration : 0.4s;
+}
+.b1:hover
+{
+    background-color : white;
+    color : green;
+}
+.b2:hover
+{
+    background-color : white;
+    color : green;
+}
+.b3:hover
+{
+    background-color : white;
+    color : green;
+}
+.b4:hover
+{
+    background-color : white;
+    color : green;
+}
+.b1{
+    position : absolute;
+    top : 340px;
+    left : 210px;
+}
+.b2{
+    position : absolute;
+    top : 340px;
+    left : 750px;
+}
+.b4{
+    position : absolute;
+    top : 190px;
+    left : 505px;
+}
+.b3{
+    position : absolute;
+    transition-duration : 0.4s;
+    top : 10px;
+    left : 1200px;
+    font-size : 14px;
+    background-color : green;
+    color : white;
+    font-style : italic;
+    cursor : pointer;
+    border-radius : 10px;
+}
+</style>
+<script>
+function display1()
+{
+ var d = new Date();
+ document.getElementById("a1").innerHTML =  "Today is, " + d;
+  display2();
+}
+function display2()
+{
+  mytime = setTimeout('display1()',1000);
+}
+</script>
+<body onload="display1()">
+<h4> Hello, <%= @customer[:firstname] %>!</h4>
+<h4 id="a1"> </h4>
+<h4 id="a2"> </h4>
+<%= button_to "Place an order", { :controller => "customers" , :action => "select" }, :method => :post , :class => "b1"%>
+<br><br>
+<%= button_to "Track my order", { :controller => "customers" , :action => "track" }, :method => :post , :class => "b2"%>
+<br><br>
+<%= button_to "Edit profile", { :controller => "customers" , :action => "edit" }, :method => :post , :class => "b4"%>
+<br><br>
+<%= button_to "LogOut", { :controller => "users" , :action => "index" }, :method => :get , :class => "b3"%>
+</body>
+</html>

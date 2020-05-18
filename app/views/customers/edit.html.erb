@@ -1,0 +1,105 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+<title>
+Signup page for customers
+</title>
+<style>
+p
+{
+    color : red;
+}
+
+div
+{
+ position : absolute;
+ top : 40px;
+ left : 480px;
+}
+body
+{
+    background-image : url("/loginpage.jpg");
+    backgorund-size : cover;
+}
+.b
+{
+   background-color : green;
+   color : white;
+   cursor : pointer;
+   font-size : 15px;
+   border-radius : 10px;
+}
+</style>
+<script>
+function onClick()
+{
+    var a = document.getElementById("t6");
+    var b = document.getElementById("t7");
+    var c = document.getElementById("t1");
+    var d = document.getElementById("t2");
+    var e = document.getElementById("t3");
+    var f = document.getElementById("t5");
+    var g = document.getElementById("t8");
+    var h = document.getElementById("t9");
+    var i = document.getElementById("t10");
+    var j = document.getElementById("t11");
+    var k = document.getElementById("t12");
+    if(a.value=="" || b.value=="" || c.value=="" || d.value=="" || e.value=="" || f.value=="" || g.value=="" || h.value=="" || i.value=="" || j.value=="" || k.value=="")
+        {
+            alert("All the fields have to be filled");
+            return false;
+        }
+    if(a.value == b.value)
+        {
+            alert("Profile updated successfully");
+            return true;
+        }
+    if(a.value!=b.value)
+        {
+            var l = document.getElementById("l1");
+            l.style.visibility = "visible";
+            var t = document.getElementById("t6");
+            t.style.border = "1px solid red";
+            return false;
+        }
+}
+</script>
+</head>
+<body>
+<div>
+<form action="update" method="post" onsubmit= "return onClick()">
+First name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t1" name="fname" value="<%=@customer[:firstname]%>">
+<br><br>
+ Last name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t2" name="lname" value="<%=@customer[:lastname]%>"><br><br>
+ Mobile number: &nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t3" name="mobile" value="<%=@customer[:mobile]%>"><br><br>
+Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t5" name="uname" value="<%=@customer[:username]%>"><br><br>
+ Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="password" size="30" id="t7" name="pwd" value="<%=@customer[:pwd]%>"><br><br>
+ Re-type password:
+<input type="password" size="30" id="t6" name="pwd1" value="<%=@customer[:pwd]%>">
+<p style="visibility : hidden ;color : red" id="l1"> Password not matched! </p>
+<h4> <u> <b> Preferred delivery address </u> </b> </h4> <br>
+House/Apt number: &nbsp;
+<input type="textfield" size="30" id="t8" name="ha_no" value="<%=@customer[:house_apt_no]%>"><br><br>
+Street: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t9" name="street" value="<%=@customer[:street]%>"><br><br>
+City: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t10" name="city" value="<%=@customer[:city]%>"><br><br>
+State: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t11" name="state" value="<%=@customer[:state]%>"><br><br>
+Pincode : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t12" name="pincode" value="<%=@customer[:pincode]%>"><br><br>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<input type="hidden" name="old_user_name" value="<%=@customer[:username]%>">
+<br>
+<input type="submit" value="Update" class="b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="Reset" class="b">
+</div>
+</form>
+</body>
+</html>

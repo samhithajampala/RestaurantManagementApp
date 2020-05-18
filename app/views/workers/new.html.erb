@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+    background-image : url("/pink.jpg");
+    background-size : cover;
+}
+
+</style>
+<script>
+function onClick()
+{
+    var a = document.getElementById("t1");
+    var b = document.getElementById("s1");
+    var c = document.getElementById("t2");
+    var d = document.getElementById("t3");
+    var e = document.getElementById("t4");
+    if(a.value =="" || b.value =="" || c.value =="" )
+      {
+          alert("All the fields have to be filled");
+          return false;
+      }
+    else
+        {
+            generateUsername();
+            generatePassword();
+            alert("Successfully created!!" + "\r\n" + "Username : " +t3.value+ "\r\n"+"Password :"+t4.value);
+            return true;
+        }
+   
+}
+function generatePassword()
+{
+    var a = document.getElementById("t1");
+    var b = document.getElementById("t3");
+    var c = document.getElementById("t4");
+    var name = a.value;
+    b.value = name;
+    c.value = name + "1" +"2" + "3";
+}
+function generateUsername()
+{
+    var a = document.getElementById("t1");
+    var b = document.getElementById("t3");
+    var c = document.getElementById("t4");
+    var name = a.value;
+    b.value = name;
+    c.value = name + "1" +"2" + "3"
+}
+</script>
+</head>
+<body>
+<form action="/workers/create" method="post" onsubmit="return onClick()">
+Name : &nbsp;&nbsp;&nbsp;&nbsp;
+<input type = "textfield" name="n" id="t1"> <br><br>
+Specialisation:  &nbsp;&nbsp;&nbsp;&nbsp;
+<select name="spl" id="s1">
+<option> Chinese </option>
+<option> Desserts </option>
+<option> Salads </option>
+<option> Ice-creams </option>
+<option> Bread-Items </option>
+<option> Non-veg Biriyanis </option>
+<option> Pure veg </option>
+<option> Northern </option>
+<option> Starters </option>
+</select>
+<br>
+<br>
+Salary: &nbsp;&nbsp;&nbsp;&nbsp;
+<input type = "textfield" name="sal" id="t2"> <br><br>
+<input type = "hidden" name="uname" id="t3"> <br><br>
+<input type="hidden" name="pwd" id="t4"> <br><br>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<input type="submit" value="Add">
+<input type="reset" value="Reset">
+</form>
+</body>
+</html>

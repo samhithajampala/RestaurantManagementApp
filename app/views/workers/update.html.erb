@@ -1,0 +1,79 @@
+<script>
+function enable1()
+{
+    document.getElementById("f1").innerHTML = "Amount Increment:";
+    document.getElementById("f2").innerHTML = "Percentage Increment:";
+    document.getElementById("d1").style.visibility = "visible";
+}
+function enable2()
+{
+    document.getElementById("f1").innerHTML = "Amount Decrement:";
+    document.getElementById("f2").innerHTML = "Percentage Decrement:";
+    document.getElementById("d1").style.visibility = "visible";
+}
+function print()
+{
+  <% if flash[:success] %>
+  alert("Salary Successfully updated")
+  <% end %>
+}
+function chck1()
+{
+  document.getElementById("p2").style.visibility = "visible";
+  document.getElementById("p3").style.visibility = "hidden";
+}
+function chck2()
+{
+  document.getElementById("p3").style.visibility = "visible";
+  document.getElementById("p2").style.visibility = "hidden";
+} 
+function validate()
+{
+    if(document.getElementById("s1").value == "") {alert("All fields have to be filled out!");return false};
+    if(document.getElementById("r3").value == "" && document.getElementById("r4").value == "") 
+        {
+        alert("All fields have to be filled out!");
+        return false;
+        }
+    if(document.getElementById("r2").value == "" && document.getElementById("r1").value == "") {alert("All fields have to be filled out!");return false;}
+    if(document.getElementById("p1").value == "" && document.getElementById("a1").value == "") {alert("All fields have to be filled out!"); return false;}
+return true;
+ }
+</script>
+<body onload="print()">
+ <form action="update_salaries" method="post" onsubmit="return validate()">
+ <button type="button" onclick="../"> Back </button>
+ <input type="radio" name="type1" id="r3" value="inc" onclick="enable1()"> 
+Increment Salary
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="type1" id="r4" value="dec" onclick="enable2()"> 
+ Decrement Salary
+ <br>
+ <br>
+ Enter id of the worker whose salary is to be incremented: &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="search" name="wid" id="s1">   &nbsp;&nbsp;&nbsp;
+<br>
+<br>
+<div style="visibility: hidden" id="d1">
+Update salary by:
+<br>
+<br>
+<input type="radio" name="type" id="r1" value="Amount" onclick="chck1()"> 
+ Amount
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="type" id="r2" value="Percentage" onclick="chck2()"> 
+ Percentage 
+<br>
+<br>
+<p id="p2" style="visibility : hidden">
+<font id="f1">Amount Increment:</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="8" name="amt_value" id="a1"> </p>
+&nbsp;&nbsp;&nbsp;
+<p id="p3" style="visibility:hidden">
+<font id="f2"> Percentage Increment:</font>&nbsp;<input type="text" size="8" name="prct_value" id="p1" > </p>
+<br>
+<br>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<input type="submit" value="Update">
+</div>
+</form>
+</body>

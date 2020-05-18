@@ -1,0 +1,192 @@
+<html>
+<head>
+<style>
+body
+{
+  background-image : url("/menu.jpg");
+}
+</style>
+<script>
+function enable(a,b)
+{
+if(b.checked)
+  a.style.visibility = "visible";
+else
+    a.style.visibility = "hidden"; 
+}
+function confirmation()
+{
+  
+  var x = confirm("Are you sure you want to place this order");
+  if(x == false)
+    {
+      return false;
+    }
+  else
+    {
+      return true;
+    }
+}
+</script>
+</head>
+<body>
+<form action="booked_items/create" method="post" onsubmit="return confirmation()">
+<br>
+<div style="color : yellow">
+<br>
+<font size="4"> <h2 id="h" style="color : white">  Northern  </u></h2> 
+<br>
+<br>Kulcha
+<input type="checkbox" name="item[]" value="Kulcha" onclick="enable(n1,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.28 per piece 
+<br><br>
+<div style="visibility:hidden" id="n1"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Roti
+<input type="checkbox" name="item[]" value="Roti" onclick="enable(n2,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.20 per piece 
+<br><br>
+<div style="visibility:hidden" id="n2"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Pulka
+<input type="checkbox" name="item[]" value="Pulka" onclick="enable(n3,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.18 per piece 
+<br><br>
+<div style="visibility:hidden" id="n3"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+</div>
+<h2 style="color:white">  Chinese </h2>
+<div style="color : yellow">
+<br><br>
+&nbsp;Noodles
+<input type="checkbox" name="item[]" value="Noodles"  onclick="enable(n4,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.40 per plate 
+<br><br>
+<div style="visibility:hidden" id="n4"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+&nbsp;Pizza
+<input type="checkbox" name="item[]" value="Pizza"  onclick="enable(n5,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.99 per piece 
+<br><br>
+<div style="visibility:hidden" id="n5"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+&nbsp;Manchurian
+<input type="checkbox" name="item[]" value="Manchurian"  onclick="enable(n7,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.39 per piece 
+<br><br>
+<div style="visibility:hidden" id="n7"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+&nbsp;Burger
+<input type="checkbox" name="item[]" value="Burger"  onclick="enable(n6,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.65 per piece 
+<br><br>
+<div style="visibility:hidden" id="n6"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+
+</div>
+<div style="color : yellow ;position: absolute ;top:60px;left:700px">
+<h2 style="color : white">  Ice-creams  </h2>
+<br><br>
+Death By Chocolate
+<input type="checkbox" name="item[]" value="Death"  onclick="enable(n8,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.190 per cup
+<br><br>
+<div style="visibility:hidden" id="n8"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Vanilla
+<input type="checkbox" name="item[]" value="Vanilla"  onclick="enable(n9,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.48 per scoop
+<br><br>
+<div style="visibility:hidden" id="n9"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Strawberry
+<input type="checkbox" name="item[]" value="Strawberry"  onclick="enable(n10,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.51 per scoop 
+<br><br>
+<div style="visibility:hidden" id="n10"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+</div>
+<div style="color : yellow;position:absolute;top:430px;left:700px">
+<h2 style="color:white">  Pure Veg  </h2>
+<br><br>
+Paneer Tikka
+<input type="checkbox" name="item[]" value="Paneertikka"  onclick="enable(n11,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.170 per plate 
+<br><br>
+<div style="visibility:hidden" id="n11"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Crispy Babycorn
+<input type="checkbox" name="item[]" value="Baby"  onclick="enable(n12,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.129 per piece 
+<br><br>
+<div style="visibility:hidden" id="n12"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Veg-rolls
+<input type="checkbox" name="item[]" value="Rolls"  onclick="enable(n13,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.38 per piece 
+<br><br>
+<div style="visibility:hidden" id="n13"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+</div>
+<h2 style="color : white"> <br><br><br><br><br>Non-veg starters  </h2>
+<br><br>
+<div style="color : yellow">
+Chicken 555
+<input type="checkbox" name="item[]" value="555"  onclick="enable(n14,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.230 per plate 
+<br><br>
+<div style="visibility:hidden" id="n14"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Dragon chicken
+<input type="checkbox" name="item[]" value="Dragon"  onclick="enable(n15,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.250 per plate
+<br><br>
+<div style="visibility:hidden" id="n15"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Chicken Majestic
+<input type="checkbox" name="item[]" value="Majestic"  onclick="enable(n16,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.221 per plate
+<br><br>
+<div style="visibility:hidden" id="n16"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+</div>
+<div style="color : yellow ;position: absolute ;top:1050px;left:700px">
+<h2 style="color : white">  Biriyani items  </h2>
+<br><br>
+Chicken Biriyani
+<input type="checkbox" name="item[]" value="Chicken"  onclick="enable(n17,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.320 per plate 
+<br><br>
+<div style="visibility:hidden" id="n17"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Prawns Fry Biriyani
+<input type="checkbox" name="item[]" value="Prawns"  onclick="enable(n18,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.530 per plate
+<br><br>
+<div style="visibility:hidden" id="n18"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Mutton biriyani
+<input type="checkbox" name="item[]" value="Mutton"  onclick="enable(n20,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.490 per plate 
+<br><br>
+<div style="visibility:hidden" id="n20"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Chicken Dum biriyani
+<input type="checkbox" name="item[]" value="Dum"  onclick="enable(n19,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.450 per plate 
+<br><br>
+<div style="visibility:hidden" id="n19"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+Chicken spl biriyani
+<input type="checkbox" name="item[]" value="Spl"  onclick="enable(n21,this)">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.290 per plate 
+<br><br>
+<div style="visibility:hidden" id="n21"> Quantity : <input type="number" name="amount[]" value="0"> </div>
+<br><br>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" name="submit" value="Place order" style="font-size:25px;cursor:pointer;color:black;background-color:yellow">
+<br><br><br><br><br><br><br>
+</div>
+</font>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+</form>
+</body>
+</html>

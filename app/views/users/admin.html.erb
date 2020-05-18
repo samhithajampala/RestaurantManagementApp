@@ -1,0 +1,72 @@
+<html>
+<head>
+<title> Admin Page </title>
+<style>
+.b1
+{
+    background-color : blue;
+    color : white;
+    font-size : 35px;
+    cursor : pointer;
+    border-radius : 10px;
+}
+.b2
+{
+    background-color : blue;
+    color : white;
+    font-size : 35px;
+    cursor : pointer;
+    border-radius : 10px;
+}
+.b3
+{
+    background-color : blue;
+    color : white;
+    cursor : pointer;
+    border-radius : 10px;
+}
+.b1:hover
+{
+ background-color : black;;
+ color : white;
+}
+.b2:hover
+{
+ background-color : black;
+ color : white;
+}
+.b3:hover
+{
+ background-color : black;
+ color : white;
+}
+.b1{
+position : absolute;
+top : 200px;
+left : 200px;
+}
+.b2{
+position : absolute;
+top : 200px;
+left : 800px;
+}
+.b3{
+position : absolute;
+top : 10px;
+left : 1200px;
+font-size : 15px;
+}
+body{
+    background-image : url("/admin1.jpeg");
+    background-size : cover;
+}
+</style>
+</head>
+<body>
+<%= button_to "Add a worker", { :controller => "workers" , :action => "new" }, :method => :post , :class => "b1"%>
+<br>
+<%= button_to "Update Workers salaries", { :controller => "workers" , :action => "update" }, :method => :post , :class => "b2"%>
+<br>
+<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get , :class => "b3"%>
+</body>
+</html>

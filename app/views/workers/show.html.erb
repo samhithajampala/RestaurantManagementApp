@@ -1,0 +1,66 @@
+<style>
+div#d1
+{
+  text-align : right;
+}
+table
+{
+  border-collapse : collapse;
+  width : 100%
+}
+tr
+{
+  border-bottom : 1px solid black;
+}
+tr:hover
+{
+  background-color : grey;
+  color : white;
+}
+th
+{
+ background-color : darkgreen;
+ color : white;
+}
+tr{
+  text-align : center;
+}
+body{
+  background-image : url("/wood.jpg");
+  background-size : cover;
+}
+</style>
+<script>
+function date()
+{
+  var date = new Date();
+  document.getElementById("d2").innerHTML = "Today is " + date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear();
+}
+</script>
+<body onload="date()">
+<h3> Hello, <%= @worker[:name].capitalize %>!</h3>
+<div id="d2"> </div>
+<div id="d1">
+<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get%>
+</div>
+<% if @item_names.length==0 then %>
+ <h3> You have no items to be prepared at this time,Come back later! </h3>
+<% else %>
+<br><br>
+<p> Here is your <b> todo list </b>, </p>
+ <table> 
+ <tr>
+ <th> ItemName </th> 
+ <th> Quantity </th> 
+ <th> Update Status </th> 
+ </tr> 
+<% @item_names.zip(@my_items).each do |m,a| %>
+    <tr>
+  <td>  <%= m[:name] %> </td>
+  <td> <%= a[:quantity] %> </td>
+  <td> <%= link_to "Done", {:controller => "booked_items", :action => "myupdate", :item => a[:id] } , target: "_self" %> </td>
+  </tr>
+<%end %>
+</table>
+<%end%>
+</body>

@@ -1,0 +1,65 @@
+<head>
+<style>
+.d
+{
+  color: green;
+  position : absolute;
+  top : 0px;
+  left : 250px;
+}
+a{
+    cursor : pointer;
+    font-size : 20px;
+}
+a:hover
+{
+  background-color : brown;
+  color : white;
+}
+body{
+    background-image : url("/first.jpg");
+}
+.h
+{
+    color : green;position:absolute;top:200px;left:280px;font-size : 30px;
+}
+</style>
+<script>
+function about()
+{
+ var c = document.getElementById("d1");
+ if(c.innerHTML == "<br> Jampala Samhitha - B170384CS, <br> Kedaresetti Praveen Kumar - B170094CS, <br> NIT Calicut, <br> Kerala. ")
+    { c.innerHTML = "";}
+ else
+    {
+        c.innerHTML = "<br> Jampala Samhitha - B170384CS, <br> Kedaresetti Praveen Kumar - B170094CS, <br> NIT Calicut, <br> Kerala. ";
+    }
+}
+function contact()
+{
+ var c = document.getElementById("d1");
+ if(c.innerHTML == "<br> <u> Contact Info. <br></u> J.Samhitha : <br> 7901021932 (phone) <br> samhitha.jampala2000@gmail.com(email)")
+    { c.innerHTML = "" ;}
+ else
+    {
+        c.innerHTML = "<br> <u> Contact Info. <br></u> J.Samhitha : <br> 7901021932 (phone) <br> samhitha.jampala2000@gmail.com(email)";
+    }
+}
+function set()
+{
+    var c = document.getElementById("d1");
+    c.innerHTML = "";
+}
+</script>
+</head>
+<body onload = "set()">
+<div class="d">
+<br>
+<a onClick="about()"> <b> AboutUs <b> </a> | <a onClick = "contact()"> <b>Contact </b> </a>|<a href="/users"> <b> LoginPage </b> </a>
+<div id="d1">
+</div>
+<br>
+</div>
+<h1 class="h"> WELCOME, TO THE RESTAURANT MANAGEMENT APP </u> </b> </h1>
+<h3 style="color : red;position:absolute;top:400px;left:500px;font-size : 20px;"> <i> Good Food makes Everything great... </i> </h3>
+</body>

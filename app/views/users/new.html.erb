@@ -1,0 +1,102 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+<title>
+Signup page for customers
+</title>
+<style>
+p
+{
+    color : red;
+}
+
+div
+{
+ position : absolute;
+ top : 40px;
+ left : 480px;
+}
+body
+{
+    background-image : url("/loginpage.jpg");
+    backgorund-size : cover;
+}
+.b
+{
+   background-color : green;
+   color : white;
+   cursor : pointer;
+   font-size : 15px;
+   border-radius : 10px;
+}
+</style>
+<script>
+
+function onClick()
+{
+    var a = document.getElementById("t6");
+    var b = document.getElementById("t7");
+    var c = document.getElementById("t1");
+    var d = document.getElementById("t2");
+    var e = document.getElementById("t3");
+    var f = document.getElementById("t4");
+    var g = document.getElementById("t5");
+    if(a.value=="" || b.value=="" || c.value=="" || d.value=="" || e.value=="" || f.value=="" || g.value=="")
+        {
+            alert("All the fields have to be filled");
+            return false;
+        }
+        
+    if(a.value == b.value)
+        {
+            alert("Your account is successfully created!");
+            return true;
+        }
+    else
+        {
+            var l = document.getElementById("l1");
+            l.style.visibility = "visible";
+            var t = document.getElementById("t6");
+            t.style.border = "1px solid red";
+            return false;
+        }
+}
+</script>
+</head>
+<body>
+<div>
+<form action="/users" method="post" onsubmit= "return onClick()">
+First name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t1" name="fname">
+<br><br>
+ Last name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t2" name="lname"><br><br>
+ Mobile number: &nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t3" name="mobile"><br><br>
+Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t5" name="uname"><br><br>
+ Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="password" size="30" id="t7" name="pwd"><br><br>
+ Re-type password:
+<input type="password" size="30" id="t6" name="pwd1">
+<p style="visibility : hidden ;color : red" id="l1"> Password not matched! </p>
+<h4> <u> <b> Preferred delivery address </u> </b> </h4> <br>
+House/Apt number: &nbsp;
+<input type="textfield" size="30" id="t4" name="ha_no"><br><br>
+Street: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t4" name="street"><br><br>
+City: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t4" name="city"><br><br>
+State: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t4" name="state"><br><br>
+Pincode : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="textfield" size="30" id="t4" name="pincode"><br><br>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<br>
+<input type="submit" value="Create Account" class="b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="Reset" class="b">
+</div>
+</form>
+</body>
+</html>

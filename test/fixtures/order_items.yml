@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oid: MyString
+  iid: MyString
+  status: MyString
+  chef: MyString
+
+two:
+  oid: MyString
+  iid: MyString
+  status: MyString
+  chef: MyString

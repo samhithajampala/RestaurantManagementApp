@@ -1,0 +1,12 @@
+<p> Successful login </p>
+<p> Welcome! </p>
+<p> Todays Menu </p>
+<% if(@category == "Customer") %>
+<%= link_to "continue", @customer %>
+<% end %>
+<% if(@category == "Admin") %>
+<%= link_to "continue", "/users/admin" %>
+<% end %>
+<% if(@category == "Worker") %>
+<%= link_to "continue", @worker %>
+<% end %>

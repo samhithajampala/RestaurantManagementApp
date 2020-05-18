@@ -1,0 +1,44 @@
+<style>
+body{
+    background-image : url("/orderstatus.jpg");
+   background-size : cover;
+  font-weight : bold;
+}
+div
+{
+position : absolute;
+left : 400px;
+top : 20px;
+}
+</style>
+<body>
+<%= link_to "Go to home page", @customer %>
+<div>
+<ol>
+<% @my_items.each do |m| %>
+    <font size="3" color="purple">
+<li>
+ <% @iid = m[:iid] %>
+ <% item = Item.find(@iid) %>
+
+ Item-Name : <%= item[:name] %>
+ <br><br>
+ <font size="3" color="purple">
+ Quantity: <%= m[:quantity] %>
+ <br><br>
+ <font size="3" color="purple">
+ <% if m[:chef] != nil %> 
+ Being prepared by: <%= m[:chef].capitalize %>
+<%else%>
+    Being prepared by: Not yet decided
+<%end %>
+ <br><br>
+ <font size="3" color="purple">
+ Status of this item: <%= m[:status].capitalize %>
+ </li>
+ <br><br>
+ <br><br>
+ <% end %>
+ </ol>
+ </div>
+ </body>

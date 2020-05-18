@@ -1,0 +1,111 @@
+<!Doctype html>
+<html>
+<head>
+<title> Login page </title>
+</head>
+<style>
+.div2
+
+{
+  color : red;
+}
+a
+{
+  text-decoration : none;
+}
+body
+
+{
+  background-image : url("/signup.jpg");
+}
+
+.b
+{
+   background-color : green;
+   color : white;
+   cursor : pointer;
+   font-size : 15px;
+   border-radius : 10px;
+}
+</style>
+<script>
+function check()
+{ 
+  <% if flash[:error1] %>
+   alert("Sorry request denied!.You are registered as a worker , but trying to access customer page.Try again")
+  <% end %>
+  <% if flash[:error2] %>
+    
+     alert("Sorry request denied!.You are registered as a admin , but trying to access customer page.Try again")
+    <% end %>
+    <% if flash[:error3] %>
+      
+       alert("Sorry request denied!.You are registered as a worker , but trying to access admin page.Try again")
+      <% end %>
+      <% if flash[:error4] %>
+        
+         alert("Sorry request denied!.You are registered as a customer , but trying to access admin page.Try again")
+        <% end %>
+        <% if flash[:error5]%>
+          
+           alert("Sorry request denied!.You are registered as a customer , but trying to access worker page.Try again")
+        <% end %>
+          <% if flash[:error6]%>
+            
+            alert("Sorry request denied!.You are registered as a admin , but trying to access worker page.Try again")
+          <% end %>
+}
+
+function view()
+{
+  var v = document.getElementById("p1");
+  if(v.value!="")
+    {
+  if(v.type == "password")
+    {
+      v.type = "textfield";
+    }
+  else
+    {
+      v.type="password";
+    }
+  }
+}
+</script>
+<body onload="check()">
+<div style = "position : absolute;top : 70px;left : 480px;">
+<h1> WELCOME! </h1>
+<h4> Please enter your login credentials below. </h4>
+
+</div>
+<div style = "position : absolute;top : 170px;left : 480px;">
+<form action="/users/verify" method="post">
+<label for="t1"> Username </label>
+<input type="textfield" id="t1" name="uname"><br><br>
+<label for="p1"> Password </label>
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<input type="password" id="p1" name="pwd">
+<button type = "button" onclick="view()" > <img src = "/eye.png" height="15px" width="15px"></button> 
+<br><br>
+<select name="s1" id="s">
+<option name="o1"> Admin </option>
+<option name="o2"> Worker </option>
+<option name="o3"> Customer </option>
+</select>
+<br>
+<br>
+<input type="submit" value="Log In" class="b">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="Reset" id="b2" class="b">
+</form>
+<br>
+<br>
+<a href="/users/new"> New customer?Create an account </a>
+</div>
+<div class="div2">
+<% if flash[:alert2] %>
+<i> <%= flash[:alert2] %> </i>
+<% end %>
+</div>
+</body>
+</html>

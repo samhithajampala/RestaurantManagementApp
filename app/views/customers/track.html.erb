@@ -1,0 +1,38 @@
+<style>
+.d
+{
+    position : absolute;
+    top : 200px;
+    left : 200px;
+    font-size : 25px;
+}
+.b
+{
+    font-size : 20px;
+    background-color : black;
+    color : white;
+    border-radius : 10px;
+    cursor : pointer;
+    transition-duration : 0.4s;
+}
+.b:hover
+{
+    background-color : white;
+    color : black;
+}
+body{
+    background-image : url("/orderdetails.jpg");
+    background-size : cover;
+}
+</style>
+<body>
+<div class="d">
+<form action="track_order" method="get">
+  Enter the order-id of the order to be tracked: 
+&nbsp;&nbsp;&nbsp;<input type="search" name="oid" size="19">
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+&nbsp;
+<input type="submit" value="Track order" class="b">
+</form>
+</div>
+</body>

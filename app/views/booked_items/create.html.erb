@@ -1,0 +1,87 @@
+<head>
+<style>
+body
+{
+  background-image : url("/myorder.jpg");
+  background-size : cover;
+}
+table
+{
+  border-collapse : collapse;
+}
+th,td
+{
+  border-bottom : 1px solid black;
+}
+tr:hover
+{
+  background-color : gainsboro;
+  color : black;
+}
+th{
+  background-color : green;
+  color : white;
+}
+</style>
+<script>
+function view()
+{
+  var a = document.getElementById("d");
+  var b = document.getElementById("a1")
+  if(a.style.visibility == "hidden")
+    {
+      a.style.visibility = "visible";
+    }
+  else
+    {
+      a.style.visibility = "hidden";
+    }
+    if(a.style.visibility == "hidden")
+      {
+        b.innerHTML = "Click here to view your order";
+      }
+    else
+      {
+        b.innerHTML = "Click here to hide your order";
+      }
+}
+</script>
+<style>
+a
+{
+  text-decoration : underline;
+}
+
+</style>
+</head>
+<body>
+<%= link_to "Go to home page", @customer %>
+<div style="text-align : center">
+<h3> Order has been placed successfully!! </h3>
+<h3> Your order-id : <%= @new_id %> </h3>
+<h4> Total payable amount = <%= @total %>/- </h4>
+<a id="a1" onclick="view()"> Click here to view your order </a>
+</div>
+<div id="d" style="visibility:hidden">
+<br><br><br>
+<h4> <u> Your order : </u> <h4>
+<table cellspacing="2" cellpadding = "5" width="100%">
+<tr>
+<th>  ItemName  </th>
+<th>  Quantity  </th>
+<th>  Amount(in Rs.) </th>
+</tr>
+<% @booked.zip(@amt).each do |b,a| %>
+  <tr align="center">
+ <% @item =  Item.find_by_name(b) %>
+ <%  @price = @item[:price] %>
+ <% @quan = a %>
+ 
+  <td> <%= @item[:name] %> </td>
+  <td> <%= @quan %> </td>
+  <td> <%= @price.to_i * @quan.to_i %> </td>
+  </tr>
+<% end %>
+</table>
+</div>
+</body>
