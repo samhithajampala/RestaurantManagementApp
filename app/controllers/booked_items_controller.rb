@@ -43,6 +43,7 @@ class BookedItemsController < ApplicationController
         @order_item = OrderItem.find(params[:item])
         @order_item.update_attributes(:status => "done")
         @worker = Worker.find(params[:id])
+        @worker.update_attributes(:availability => 1)
      @free_items = OrderItem.where(:status => "Preparation is not yet started")
      if(@free_items.length!=0) then
        @free_items.each do |f|

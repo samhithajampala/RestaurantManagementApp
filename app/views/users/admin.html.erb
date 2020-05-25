@@ -59,10 +59,12 @@ font-size : 15px;
 body{
     background-image : url("/admin1.jpeg");
     background-size : cover;
+    color : blue;
 }
 </style>
 </head>
 <body>
+<h3> Hello Jampala, </h3>
 <%= button_to "Add a worker", { :controller => "workers" , :action => "new" }, :method => :post , :class => "b1"%>
 <br>
 <%= button_to "Update Workers salaries", { :controller => "workers" , :action => "update" }, :method => :post , :class => "b2"%>

@@ -29,6 +29,13 @@ body{
   background-image : url("/wood.jpg");
   background-size : cover;
 }
+.b
+{
+  color : white;
+  background-color : green;
+  border-radius : 5px;
+  font-size : 20px;
+}
 </style>
 <script>
 function date()
@@ -41,7 +48,7 @@ function date()
 <h3> Hello, <%= @worker[:name].capitalize %>! </h3>
 <div id="d2"> </div>
 <div id="d1">
-<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get%>
+<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get , :class => "b" %>
 </div>
 <% if @item_names.length==0 then %>
  <h3> You have no items to be prepared at this time,Come back later! </h3>

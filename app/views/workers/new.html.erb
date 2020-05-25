@@ -52,15 +52,15 @@ function generateUsername()
 </head>
 <body>
 <form action="/workers/create" method="post" onsubmit="return onClick()">
+<div id="d3" style="position:absolute;top:10px;left:1000px;">
+<%= link_to "Go to home page", "/users/admin" %>
+</div>
 Name : &nbsp;&nbsp;&nbsp;&nbsp;
 <input type = "textfield" name="n" id="t1"> <br><br>
 Specialisation:  &nbsp;&nbsp;&nbsp;&nbsp;
 <select name="spl" id="s1">
 <option> Chinese </option>
-<option> Desserts </option>
-<option> Salads </option>
 <option> Ice-creams </option>
-<option> Bread-Items </option>
 <option> Non-veg Biriyanis </option>
 <option> Pure veg </option>
 <option> Northern </option>

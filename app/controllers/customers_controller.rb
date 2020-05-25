@@ -13,6 +13,10 @@ class CustomersController < ApplicationController
         @c_id = params[:id]
         @customer = Customer.find(@c_id)
         @my_items = OrderItem.where(:oid => params[:oid])
+        if(@my_items.length == 0) then
+                flash[:failed] = "Invalid order-Id";
+                redirect_back fallback_location: "/";
+        end
 
     end
     def update

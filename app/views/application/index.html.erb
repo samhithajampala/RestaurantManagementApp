@@ -28,11 +28,11 @@ body{
 function about()
 {
  var c = document.getElementById("d1");
- if(c.innerHTML == "<br> Jampala Samhitha - B170384CS, <br> Kedaresetti Praveen Kumar - B170094CS, <br> NIT Calicut, <br> Kerala. ")
+ if(c.innerHTML == "<br> Jampala Samhitha - B170384CS, <br> NIT Calicut, <br> Kerala. ")
     { c.innerHTML = "";}
  else
     {
-        c.innerHTML = "<br> Jampala Samhitha - B170384CS, <br> Kedaresetti Praveen Kumar - B170094CS, <br> NIT Calicut, <br> Kerala. ";
+        c.innerHTML = "<br> Jampala Samhitha - B170384CS, <br> NIT Calicut, <br> Kerala. ";
     }
 }
 function contact()
@@ -50,6 +50,11 @@ function set()
     var c = document.getElementById("d1");
     c.innerHTML = "";
 }
+function link()
+{
+
+    document.getElementById("d2").style.visibility = "visible";
+}
 </script>
 </head>
 <body onload = "set()">
@@ -61,5 +66,13 @@ function set()
 <br>
 </div>
 <h1 class="h"> WELCOME, TO THE RESTAURANT MANAGEMENT APP </u> </b> </h1>
-<h3 style="color : red;position:absolute;top:400px;left:500px;font-size : 20px;"> <i> Good Food makes Everything great... </i> </h3>
+<h3 style="color : red;position:absolute;top:280px;left:500px;font-size : 20px;"> <i> Good Food makes Everything great... </i> </h3>
+<div style="position:absolute;top:400px;left:500px;" id="d2">
+Here,
+<ul>
+<li> Admin can add new workers,update their salaries and also view the orders</li>
+<li> Customers can place their orders and also track the orders. </li>
+<li> Workers(Chefs) can see the orders and prepare them accordingly. </li>
+</ul>
+</div>
 </body>

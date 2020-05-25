@@ -40,40 +40,55 @@ function validate()
 return true;
  }
 </script>
+<style>
+body{
+  background-image : url("/yellow.jpg");
+  background-size : cover;
+  font-size : 18px;
+  color : blue;
+  font-weight : lighter;
+}
+
+</style>
 <body onload="print()">
+<div id="d3" style="position:absolute;top:10px;left:1000px;">
+<%= link_to "Go to home page", "/users/admin" %>
+</div>
  <form action="update_salaries" method="post" onsubmit="return validate()">
- <button type="button" onclick="../"> Back </button>
  <input type="radio" name="type1" id="r3" value="inc" onclick="enable1()"> 
 Increment Salary
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="type1" id="r4" value="dec" onclick="enable2()"> 
  Decrement Salary
+ <br>
  <br>
  <br>
  Enter id of the worker whose salary is to be incremented: &nbsp;&nbsp;&nbsp;&nbsp;
 <input type="search" name="wid" id="s1">   &nbsp;&nbsp;&nbsp;
 <br>
 <br>
+<br>
 <div style="visibility: hidden" id="d1">
-Update salary by:
+<u> Update salary by: </u>
+<br>
 <br>
 <br>
 <input type="radio" name="type" id="r1" value="Amount" onclick="chck1()"> 
  Amount
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="type" id="r2" value="Percentage" onclick="chck2()"> 
  Percentage 
 <br>
 <br>
 <p id="p2" style="visibility : hidden">
-<font id="f1">Amount Increment:</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="8" name="amt_value" id="a1"> </p>
-&nbsp;&nbsp;&nbsp;
+<font id="f1" size="4px">Amount Increment:</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="8" name="amt_value" id="a1"> </p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <p id="p3" style="visibility:hidden">
-<font id="f2"> Percentage Increment:</font>&nbsp;<input type="text" size="8" name="prct_value" id="p1" > </p>
+<font id="f2" size="4px"> Percentage Increment:</font>&nbsp;<input type="text" size="8" name="prct_value" id="p1" > </p>
 <br>
 <br>
 <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-<input type="submit" value="Update">
+<input type="submit" value="Update" style="font-size:20px;cursor:pointer;background-color:blue;color:yellow;border-radius:10px;">
 </div>
 </form>
 </body>

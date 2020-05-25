@@ -8,6 +8,14 @@ table
   border-collapse : collapse;
   width : 100%
 }
+.b
+{
+  background-color : green;
+  color : white;
+  border-radius : 10px;
+ cursor : pointer;
+ font-size : 20px;
+}
 tr
 {
   border-bottom : 1px solid black;
@@ -34,14 +42,14 @@ body{
 function date()
 {
   var date = new Date();
-  document.getElementById("d2").innerHTML = "Today is " + date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear();
+  document.getElementById("d2").innerHTML = "Today is " + date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
 }
 </script>
 <body onload="date()">
 <h3> Hello, <%= @worker[:name].capitalize %>!</h3>
 <div id="d2"> </div>
 <div id="d1">
-<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get%>
+<%= button_to "Logout", { :controller => "users" , :action => "index" }, :method => :get , :class => "b"%>
 </div>
 <% if @item_names.length==0 then %>
  <h3> You have no items to be prepared at this time,Come back later! </h3>

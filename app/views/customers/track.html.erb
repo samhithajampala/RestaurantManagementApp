@@ -31,7 +31,10 @@ body{
   Enter the order-id of the order to be tracked: 
 &nbsp;&nbsp;&nbsp;<input type="search" name="oid" size="19">
 <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-&nbsp;
+<font size="2" color="red"> <% if flash[:failed] then %>
+  <%= flash[:failed] %>
+  <% end %>
+  </font>
 <input type="submit" value="Track order" class="b">
 </form>
 </div>

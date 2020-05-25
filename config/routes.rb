@@ -27,6 +27,7 @@ post '/workers/create' , to:'workers#create'
 resources :workers
 post '/customers/:id/select' , to:'customers#select'
 post '/customers/:id/track' , to:'customers#track'
+get '/customers/:id/track' , to:'customers#track'
 get '/customers/:id/track_order' , to:'customers#track_order'
 resources :customers
 post '/customers/:id/booked_items/create' , to:'booked_items#create'
